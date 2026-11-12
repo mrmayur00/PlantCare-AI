@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+venv/
+database/*.db
+static/uploads/*
+!static/uploads/.gitkeep
+PlantVillage-Dataset/
+sources/
+data/
+models_new/

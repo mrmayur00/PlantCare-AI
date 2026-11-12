@@ -1,0 +1,484 @@
+{
+  "threshold": 75.0,
+  "test_images": 3570,
+  "plants": {
+    "Apple": {
+      "test_images": 212,
+      "plant_identified_pct": 93.4,
+      "health_status_pct": 92.0,
+      "exact_class_pct": 92.0,
+      "confident_pct": 88.7,
+      "accuracy_when_confident_pct": 96.8
+    },
+    "Bell Pepper": {
+      "test_images": 114,
+      "plant_identified_pct": 93.0,
+      "health_status_pct": 93.0,
+      "exact_class_pct": 93.0,
+      "confident_pct": 85.1,
+      "accuracy_when_confident_pct": 96.9
+    },
+    "Blueberry": {
+      "test_images": 57,
+      "plant_identified_pct": 93.0,
+      "health_status_pct": 93.0,
+      "exact_class_pct": 93.0,
+      "confident_pct": 89.5,
+      "accuracy_when_confident_pct": 98.0
+    },
+    "Cherry": {
+      "test_images": 114,
+      "plant_identified_pct": 98.2,
+      "health_status_pct": 98.2,
+      "exact_class_pct": 98.2,
+      "confident_pct": 96.5,
+      "accuracy_when_confident_pct": 99.1
+    },
+    "Corn (Maize)": {
+      "test_images": 228,
+      "plant_identified_pct": 99.1,
+      "health_status_pct": 99.1,
+      "exact_class_pct": 91.7,
+      "confident_pct": 87.3,
+      "accuracy_when_confident_pct": 95.5
+    },
+    "Grape": {
+      "test_images": 228,
+      "plant_identified_pct": 97.8,
+      "health_status_pct": 97.8,
+      "exact_class_pct": 92.1,
+      "confident_pct": 88.6,
+      "accuracy_when_confident_pct": 96.0
+    },
+    "Holy Basil": {
+      "test_images": 135,
+      "plant_identified_pct": 94.1,
+      "health_status_pct": 88.1,
+      "exact_class_pct": 88.1,
+      "confident_pct": 85.2,
+      "accuracy_when_confident_pct": 97.4
+    },
+    "Mango": {
+      "test_images": 600,
+      "plant_identified_pct": 99.7,
+      "health_status_pct": 99.2,
+      "exact_class_pct": 96.8,
+      "confident_pct": 95.2,
+      "accuracy_when_confident_pct": 99.1
+    },
+    "Not a supported plant": {
+      "test_images": 105,
+      "plant_identified_pct": 61.9,
+      "health_status_pct": 61.9,
+      "exact_class_pct": 61.9,
+      "confident_pct": 53.3,
+      "accuracy_when_confident_pct": 67.9
+    },
+    "Orange": {
+      "test_images": 57,
+      "plant_identified_pct": 96.5,
+      "health_status_pct": 96.5,
+      "exact_class_pct": 96.5,
+      "confident_pct": 94.7,
+      "accuracy_when_confident_pct": 98.1
+    },
+    "Peach": {
+      "test_images": 111,
+      "plant_identified_pct": 94.6,
+      "health_status_pct": 94.6,
+      "exact_class_pct": 94.6,
+      "confident_pct": 86.5,
+      "accuracy_when_confident_pct": 100.0
+    },
+    "Potato": {
+      "test_images": 139,
+      "plant_identified_pct": 97.1,
+      "health_status_pct": 97.1,
+      "exact_class_pct": 97.1,
+      "confident_pct": 92.1,
+      "accuracy_when_confident_pct": 98.4
+    },
+    "Raspberry": {
+      "test_images": 56,
+      "plant_identified_pct": 100.0,
+      "health_status_pct": 100.0,
+      "exact_class_pct": 100.0,
+      "confident_pct": 98.2,
+      "accuracy_when_confident_pct": 100.0
+    },
+    "Rice": {
+      "test_images": 312,
+      "plant_identified_pct": 96.8,
+      "health_status_pct": 64.1,
+      "exact_class_pct": 44.2,
+      "confident_pct": 17.9,
+      "accuracy_when_confident_pct": 75.0
+    },
+    "Soybean": {
+      "test_images": 57,
+      "plant_identified_pct": 91.2,
+      "health_status_pct": 91.2,
+      "exact_class_pct": 91.2,
+      "confident_pct": 86.0,
+      "accuracy_when_confident_pct": 93.9
+    },
+    "Squash": {
+      "test_images": 57,
+      "plant_identified_pct": 94.7,
+      "health_status_pct": 94.7,
+      "exact_class_pct": 94.7,
+      "confident_pct": 87.7,
+      "accuracy_when_confident_pct": 100.0
+    },
+    "Strawberry": {
+      "test_images": 114,
+      "plant_identified_pct": 95.6,
+      "health_status_pct": 95.6,
+      "exact_class_pct": 95.6,
+      "confident_pct": 94.7,
+      "accuracy_when_confident_pct": 99.1
+    },
+    "Tomato": {
+      "test_images": 569,
+      "plant_identified_pct": 96.3,
+      "health_status_pct": 95.3,
+      "exact_class_pct": 90.5,
+      "confident_pct": 85.6,
+      "accuracy_when_confident_pct": 97.7
+    },
+    "Wheat": {
+      "test_images": 305,
+      "plant_identified_pct": 78.7,
+      "health_status_pct": 72.8,
+      "exact_class_pct": 72.8,
+      "confident_pct": 60.3,
+      "accuracy_when_confident_pct": 83.7
+    }
+  },
+  "classes": {
+    "Apple___Apple_scab": {
+      "test_images": 57,
+      "accuracy_pct": 94.7
+    },
+    "Apple___Black_rot": {
+      "test_images": 57,
+      "accuracy_pct": 89.5
+    },
+    "Apple___Cedar_apple_rust": {
+      "test_images": 41,
+      "accuracy_pct": 97.6
+    },
+    "Apple___healthy": {
+      "test_images": 57,
+      "accuracy_pct": 87.7
+    },
+    "Blueberry___healthy": {
+      "test_images": 57,
+      "accuracy_pct": 93.0
+    },
+    "Cherry_(including_sour)___Powdery_mildew": {
+      "test_images": 57,
+      "accuracy_pct": 96.5
+    },
+    "Cherry_(including_sour)___healthy": {
+      "test_images": 57,
+      "accuracy_pct": 100.0
+    },
+    "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": {
+      "test_images": 57,
+      "accuracy_pct": 77.2
+    },
+    "Corn_(maize)___Common_rust_": {
+      "test_images": 57,
+      "accuracy_pct": 98.2
+    },
+    "Corn_(maize)___Northern_Leaf_Blight": {
+      "test_images": 57,
+      "accuracy_pct": 93.0
+    },
+    "Corn_(maize)___healthy": {
+      "test_images": 57,
+      "accuracy_pct": 98.2
+    },
+    "Grape___Black_rot": {
+      "test_images": 57,
+      "accuracy_pct": 77.2
+    },
+    "Grape___Esca_(Black_Measles)": {
+      "test_images": 57,
+      "accuracy_pct": 98.2
+    },
+    "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": {
+      "test_images": 57,
+      "accuracy_pct": 98.2
+    },
+    "Grape___healthy": {
+      "test_images": 57,
+      "accuracy_pct": 94.7
+    },
+    "Mango___Anthracnose": {
+      "test_images": 75,
+      "accuracy_pct": 100.0
+    },
+    "Mango___Bacterial_Canker": {
+      "test_images": 75,
+      "accuracy_pct": 100.0
+    },
+    "Mango___Cutting_Weevil": {
+      "test_images": 75,
+      "accuracy_pct": 97.3
+    },
+    "Mango___Die_Back": {
+      "test_images": 75,
+      "accuracy_pct": 100.0
+    },
+    "Mango___Gall_Midge": {
+      "test_images": 75,
+      "accuracy_pct": 93.3
+    },
+    "Mango___Powdery_Mildew": {
+      "test_images": 75,
+      "accuracy_pct": 100.0
+    },
+    "Mango___Sooty_Mould": {
+      "test_images": 75,
+      "accuracy_pct": 89.3
+    },
+    "Mango___healthy": {
+      "test_images": 75,
+      "accuracy_pct": 94.7
+    },
+    "Orange___Haunglongbing_(Citrus_greening)": {
+      "test_images": 57,
+      "accuracy_pct": 96.5
+    },
+    "Other___unsupported_plant": {
+      "test_images": 105,
+      "accuracy_pct": 61.9
+    },
+    "Peach___Bacterial_spot": {
+      "test_images": 57,
+      "accuracy_pct": 91.2
+    },
+    "Peach___healthy": {
+      "test_images": 54,
+      "accuracy_pct": 98.1
+    },
+    "Pepper,_bell___Bacterial_spot": {
+      "test_images": 57,
+      "accuracy_pct": 94.7
+    },
+    "Pepper,_bell___healthy": {
+      "test_images": 57,
+      "accuracy_pct": 91.2
+    },
+    "Potato___Early_blight": {
+      "test_images": 57,
+      "accuracy_pct": 100.0
+    },
+    "Potato___Late_blight": {
+      "test_images": 57,
+      "accuracy_pct": 93.0
+    },
+    "Potato___healthy": {
+      "test_images": 25,
+      "accuracy_pct": 100.0
+    },
+    "Raspberry___healthy": {
+      "test_images": 56,
+      "accuracy_pct": 100.0
+    },
+    "Rice___Brown_Spot": {
+      "test_images": 78,
+      "accuracy_pct": 75.6
+    },
+    "Rice___Hispa": {
+      "test_images": 78,
+      "accuracy_pct": 24.4
+    },
+    "Rice___Leaf_Blast": {
+      "test_images": 78,
+      "accuracy_pct": 41.0
+    },
+    "Rice___healthy": {
+      "test_images": 78,
+      "accuracy_pct": 35.9
+    },
+    "Soybean___healthy": {
+      "test_images": 57,
+      "accuracy_pct": 91.2
+    },
+    "Squash___Powdery_mildew": {
+      "test_images": 57,
+      "accuracy_pct": 94.7
+    },
+    "Strawberry___Leaf_scorch": {
+      "test_images": 57,
+      "accuracy_pct": 93.0
+    },
+    "Strawberry___healthy": {
+      "test_images": 57,
+      "accuracy_pct": 98.2
+    },
+    "Tomato___Bacterial_spot": {
+      "test_images": 57,
+      "accuracy_pct": 86.0
+    },
+    "Tomato___Early_blight": {
+      "test_images": 57,
+      "accuracy_pct": 84.2
+    },
+    "Tomato___Late_blight": {
+      "test_images": 57,
+      "accuracy_pct": 73.7
+    },
+    "Tomato___Leaf_Mold": {
+      "test_images": 57,
+      "accuracy_pct": 93.0
+    },
+    "Tomato___Septoria_leaf_spot": {
+      "test_images": 57,
+      "accuracy_pct": 93.0
+    },
+    "Tomato___Spider_mites Two-spotted_spider_mite": {
+      "test_images": 57,
+      "accuracy_pct": 91.2
+    },
+    "Tomato___Target_Spot": {
+      "test_images": 57,
+      "accuracy_pct": 93.0
+    },
+    "Tomato___Tomato_Yellow_Leaf_Curl_Virus": {
+      "test_images": 57,
+      "accuracy_pct": 93.0
+    },
+    "Tomato___Tomato_mosaic_virus": {
+      "test_images": 56,
+      "accuracy_pct": 98.2
+    },
+    "Tomato___healthy": {
+      "test_images": 57,
+      "accuracy_pct": 100.0
+    },
+    "Tulsi___Unhealthy": {
+      "test_images": 66,
+      "accuracy_pct": 93.9
+    },
+    "Tulsi___healthy": {
+      "test_images": 69,
+      "accuracy_pct": 82.6
+    },
+    "Wheat___Leaf_Rust": {
+      "test_images": 243,
+      "accuracy_pct": 77.0
+    },
+    "Wheat___healthy": {
+      "test_images": 62,
+      "accuracy_pct": 56.5
+    }
+  },
+  "overall_exact_class_pct": 86.6,
+  "top_confusions": [
+    {
+      "true": "Wheat___Leaf_Rust",
+      "predicted": "Other___unsupported_plant",
+      "count": 37
+    },
+    {
+      "true": "Rice___Hispa",
+      "predicted": "Rice___healthy",
+      "count": 29
+    },
+    {
+      "true": "Rice___Hispa",
+      "predicted": "Rice___Leaf_Blast",
+      "count": 25
+    },
+    {
+      "true": "Rice___healthy",
+      "predicted": "Rice___Leaf_Blast",
+      "count": 22
+    },
+    {
+      "true": "Other___unsupported_plant",
+      "predicted": "Wheat___Leaf_Rust",
+      "count": 20
+    },
+    {
+      "true": "Rice___healthy",
+      "predicted": "Rice___Hispa",
+      "count": 20
+    },
+    {
+      "true": "Rice___Leaf_Blast",
+      "predicted": "Rice___Brown_Spot",
+      "count": 19
+    },
+    {
+      "true": "Rice___Leaf_Blast",
+      "predicted": "Rice___healthy",
+      "count": 15
+    },
+    {
+      "true": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "predicted": "Corn_(maize)___Northern_Leaf_Blight",
+      "count": 13
+    },
+    {
+      "true": "Wheat___healthy",
+      "predicted": "Wheat___Leaf_Rust",
+      "count": 12
+    },
+    {
+      "true": "Wheat___healthy",
+      "predicted": "Other___unsupported_plant",
+      "count": 12
+    },
+    {
+      "true": "Grape___Black_rot",
+      "predicted": "Grape___Esca_(Black_Measles)",
+      "count": 11
+    },
+    {
+      "true": "Rice___Brown_Spot",
+      "predicted": "Rice___Leaf_Blast",
+      "count": 9
+    },
+    {
+      "true": "Mango___Sooty_Mould",
+      "predicted": "Mango___Powdery_Mildew",
+      "count": 8
+    },
+    {
+      "true": "Rice___Brown_Spot",
+      "predicted": "Rice___healthy",
+      "count": 8
+    }
+  ],
+  "unsupported_plants": {
+    "photos": 18,
+    "wrongly_diagnosed": 4,
+    "details": [
+      {
+        "file": "Gauva_healthy_0004_0249.jpg",
+        "predicted": "Tomato___healthy",
+        "confidence": 77.2
+      },
+      {
+        "file": "Gauva_healthy_0004_0275.jpg",
+        "predicted": "Tomato___Late_blight",
+        "confidence": 92.6
+      },
+      {
+        "file": "Jamun_healthy_0005_0058.jpg",
+        "predicted": "Tomato___Late_blight",
+        "confidence": 86.3
+      },
+      {
+        "file": "Pongamia_Pinnata_healthy_0007_0303.jpg",
+        "predicted": "Apple___healthy",
+        "confidence": 84.1
+      }
+    ]
+  }
+}

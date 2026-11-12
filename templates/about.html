@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}About · PlantCare AI{% endblock %}
+{% block page %}about{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div class="container narrow">
+    <span class="eyebrow">About the project</span>
+    <h1>PlantCare AI</h1>
+    <p class="lead">An AI-based plant leaf disease detection application, built as an academic project.</p>
+  </div>
+</section>
+
+<section class="section pt-0">
+  <div class="container narrow stack">
+
+    <div class="card">
+      <h3 class="card-title"><svg class="icon"><use href="#i-leaf"/></svg> Project objective</h3>
+      <p>
+        To help farmers, gardeners and students detect plant leaf diseases early by photographing
+        a leaf. The application identifies the plant, decides whether the leaf is healthy or diseased,
+        names the disease, and gives symptoms, treatment and prevention advice.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title"><svg class="icon"><use href="#i-cpu"/></svg> How the application works</h3>
+      <ol class="list numbered">
+        <li>The browser sends the leaf photo to the Flask server through <code>POST /api/predict</code>.</li>
+        <li>The server checks the file is a real JPG or PNG under {{ max_mb }} MB.</li>
+        <li>A quick colour check makes sure the photo actually contains a leaf.</li>
+        <li>The image is resized to {{ image_size }} × {{ image_size }} pixels, the size the model was trained on.</li>
+        <li>The trained neural network outputs a probability for each of its classes.</li>
+        <li>The most likely class is mapped to the plant, disease and its care information.</li>
+        <li>If the top probability is below {{ threshold }}%, the app reports "uncertain" instead of guessing.</li>
+        <li>The result is saved to the SQLite database and shown on the result page.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title"><svg class="icon"><use href="#i-info"/></svg> AI-based plant disease detection</h3>
+      <p>
+        PlantCare AI uses a <strong>convolutional neural network</strong> (CNN). CNNs learn to recognise
+        visual patterns such as spot shapes, colours, rings and textures directly from example images.
+        The model is <strong>MobileNetV2</strong>, a compact network designed for phones. It was trained on
+        labelled leaf photos from the <strong>PlantVillage</strong> dataset and from Indian crop datasets
+        (<strong>MangoLeafBD</strong> for mango, rice and wheat field photos, and a Tulsi dataset from
+        Maharashtra). It also learned an extra "other plant" class from leaves of species it does not support,
+        so it can say when a photo is outside its knowledge.
+      </p>
+      <p>
+        The model is a <em>classifier</em>, not a general plant identifier: it can only choose between the
+        plant and disease classes it was trained on. Leaves from other species may be reported as uncertain
+        or, sometimes, matched to the most similar known class. A single leaf on a plain surface, in daylight,
+        gives the most reliable result.
+      </p>
+      <p class="model-status {{ 'ok' if model_ready else 'bad' }}">
+        {% if model_ready %}
+          <svg class="icon"><use href="#i-check"/></svg> Model loaded with {{ model_classes }} classes{% if val_accuracy %} · validation accuracy {{ val_accuracy }}%{% endif %}.
+        {% else %}
+          <svg class="icon"><use href="#i-alert"/></svg> The AI model is not loaded on this server yet (see README.md).
+        {% endif %}
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title"><svg class="icon"><use href="#i-clipboard"/></svg> Technologies used</h3>
+      <div class="tech-grid">
+        <div><b>Frontend</b><span>HTML5, CSS3, JavaScript</span></div>
+        <div><b>Backend</b><span>Python, Flask, REST API</span></div>
+        <div><b>AI / ML</b><span>TensorFlow / Keras, MobileNetV2</span></div>
+        <div><b>Datasets</b><span>PlantVillage, MangoLeafBD, Rice, Wheat and Tulsi leaf datasets</span></div>
+        <div><b>Images</b><span>Pillow (PIL), NumPy</span></div>
+        <div><b>Database</b><span>SQLite</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title"><svg class="icon"><use href="#i-shield"/></svg> Supported plants and conditions</h3>
+      <div class="class-table">
+        {% for plant, disease in classes %}
+          <div class="class-row">
+            <span>{{ plant }}</span>
+            <span class="tag {{ 'tag-ok' if disease == 'Healthy' else 'tag-bad' }}">{{ disease }}</span>
+          </div>
+        {% endfor %}
+      </div>
+      {% if not_supported %}
+      <p class="muted small" style="margin:16px 0 0">
+        <strong>Not recognised yet</strong> (no training images available): {{ not_supported | join(', ') }}.
+        Photos of these plants are usually reported as uncertain, but the AI can occasionally mistake one for a supported plant (in testing, 4 of 18 such photos were).
+      </p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}

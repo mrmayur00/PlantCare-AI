@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block title %}Scan a Leaf · PlantCare AI{% endblock %}
+{% block page %}scan{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div class="container narrow">
+    <span class="eyebrow">Leaf scanner</span>
+    <h1>Scan your plant</h1>
+    <p class="lead">Capture or upload a clear photo of one leaf. JPG or PNG, up to {{ max_mb }} MB.</p>
+  </div>
+</section>
+
+<section class="section pt-0">
+  <div class="container narrow">
+
+    {% if model_error %}
+    <div class="alert alert-warn">
+      <svg class="icon"><use href="#i-alert"/></svg>
+      <div><strong>AI model not available.</strong> {{ model_error }}</div>
+    </div>
+    {% endif %}
+
+    <div class="alert alert-error" data-error hidden>
+      <svg class="icon"><use href="#i-alert"/></svg>
+      <div data-error-text></div>
+    </div>
+
+    <!-- Step 1: choose a source -->
+    <div class="source-grid" data-source-picker>
+      <button type="button" class="card source-card" data-open-camera>
+        <div class="icon-badge lg"><svg class="icon"><use href="#i-camera"/></svg></div>
+        <h3>Capture using camera</h3>
+        <p>Take a photo of the leaf now</p>
+      </button>
+      <label class="card source-card" for="galleryInput">
+        <div class="icon-badge lg"><svg class="icon"><use href="#i-image"/></svg></div>
+        <h3>Upload from gallery</h3>
+        <p>Choose a JPG, JPEG or PNG</p>
+      </label>
+    </div>
+
+    <!-- Hidden file inputs. The camera input is the fallback when live camera is not possible. -->
+    <input id="galleryInput" type="file" accept=".jpg,.jpeg,.png,image/jpeg,image/png" hidden data-gallery-input>
+    <input type="file" accept="image/*" capture="environment" hidden data-capture-input>
+
+    <!-- Drop zone (desktop) -->
+    <label class="dropzone" for="galleryInput" data-dropzone>
+      <svg class="icon"><use href="#i-leaf"/></svg>
+      <span>or drag &amp; drop a leaf image here</span>
+    </label>
+
+    <!-- Step 2: preview -->
+    <div class="card preview-card" data-preview hidden>
+      <div class="preview-frame">
+        <img alt="Selected leaf" data-preview-img>
+        <div class="scan-overlay" data-loading hidden>
+          <div class="scan-line"></div>
+          <div class="loading-box">
+            <span class="spinner"></span>
+            <span>Analysing leaf…</span>
+          </div>
+        </div>
+      </div>
+      <div class="preview-meta">
+        <div class="file-info">
+          <svg class="icon"><use href="#i-image"/></svg>
+          <span data-file-name>leaf.jpg</span>
+          <small data-file-size></small>
+        </div>
+        <div class="preview-actions">
+          <button type="button" class="btn btn-ghost btn-sm" data-change>Change</button>
+          <button type="button" class="btn btn-ghost btn-sm btn-danger-text" data-remove>
+            <svg class="icon"><use href="#i-x"/></svg> Remove
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary btn-lg btn-block" data-detect disabled>
+      <svg class="icon"><use href="#i-cpu"/></svg> Detect Disease
+    </button>
+
+    <div class="tips card">
+      <h3><svg class="icon"><use href="#i-info"/></svg> Tips for the best result</h3>
+      <ul>
+        <li>One leaf, filling most of the photo</li>
+        <li>Good daylight, no strong shadows</li>
+        <li>Plain background if possible</li>
+        <li>Hold steady so the photo is sharp</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Live camera dialog -->
+<div class="camera-modal" data-camera-modal hidden>
+  <div class="camera-box">
+    <div class="camera-head">
+      <strong>Point at a leaf</strong>
+      <button type="button" class="icon-btn" aria-label="Close camera" data-camera-close>
+        <svg class="icon"><use href="#i-x"/></svg>
+      </button>
+    </div>
+    <div class="camera-view">
+      <video playsinline autoplay muted data-camera-video></video>
+      <div class="camera-guide"></div>
+    </div>
+    <div class="camera-actions">
+      <button type="button" class="btn btn-ghost btn-sm" data-camera-flip>Switch camera</button>
+      <button type="button" class="shutter" aria-label="Capture photo" data-camera-shoot></button>
+      <span class="spacer"></span>
+    </div>
+  </div>
+</div>
+{% endblock %}
