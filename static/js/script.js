@@ -303,12 +303,16 @@ async function initResultPage() {
   const conf = Number(r.confidence) || 0;
   $("[data-confidence]").textContent = `${conf.toFixed(1)}%`;
   const ring = $("[data-ring]");
-  ring.classList.add(conf >= 85 ? "high" : conf >= r.threshold ? "mid" : "low");
+  // The model can be very sure that a leaf is NOT one of its plants ("Other" class)
+  const unsupported = r.predicted_label === "Other___unsupported_plant" && conf >= r.threshold;
+  ring.classList.add(uncertain ? "low" : conf >= 85 ? "high" : conf >= r.threshold ? "mid" : "low");
   const circumference = 2 * Math.PI * 52;
   requestAnimationFrame(() => {
     $("[data-ring-fg]").style.strokeDashoffset = circumference * (1 - conf / 100);
   });
-  $("[data-confidence-note]").textContent = uncertain
+  $("[data-confidence-note]").textContent = unsupported
+    ? "Confidence that this leaf is not one of the supported plants."
+    : uncertain
     ? `Below the ${r.threshold}% level needed for a reliable answer.`
     : conf >= 85 ? "High confidence prediction." : "Moderate confidence. Consider re-scanning with a clearer photo.";
 
