@@ -1,0 +1,421 @@
+{
+  "_comment": "Set the environment variable PLANTCARE_SOURCES to the folder created by get_datasets.sh. See README section 3.",
+  "_sources": {
+    "plantvillage": "PlantVillage (Hughes & Salathe 2015), github.com/spMohanty/PlantVillage-Dataset, CC BY-SA 3.0",
+    "mangoleafbd": "MangoLeafBD (Ahmed et al. 2023, Data in Brief), Mendeley 10.17632/hxsnvwty3r.1, CC BY 4.0; copy from github.com/DevyanshMalhotra/MangoLeafDiseaseDetection",
+    "rice": "Rice Diseases Image Dataset (Huy Minh Do, Kaggle), field photos; copy from github.com/jonathanrjpereira/Rice-Disease-Classification (Rice_All.zip)",
+    "wheat": "Wheat Disease Detection images (web-collected), github.com/suhasmaddali/Wheat-Disease-Detection-; only Healthy + Leaf Rust used, Healthy filtered to green-plant photos",
+    "tulsi": "India's Most Famous Basil (Tulsi) Plant Leaves Quality Dataset, Nagpur/Amravati, Maharashtra; copy from github.com/yassa-life/Basil_Leaf_health_check_dataset-_trained_model-evidence",
+    "other": "Healthy and diseased leaves of sweet basil, mint, coriander, parsley, kale, lettuce; github.com/waqas-ali/tf_plant_disease_classification - used only as the 'unsupported plant' class"
+  },
+  "Apple___Apple_scab": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Apple___Apple_scab"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Apple___Black_rot": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Apple___Black_rot"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Apple___Cedar_apple_rust": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Apple___Cedar_apple_rust"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Apple___healthy": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Apple___healthy"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Blueberry___healthy": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Blueberry___healthy"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Cherry_(including_sour)___Powdery_mildew": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Cherry_(including_sour)___Powdery_mildew"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Cherry_(including_sour)___healthy": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Cherry_(including_sour)___healthy"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Corn_(maize)___Common_rust_": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Corn_(maize)___Common_rust_"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Corn_(maize)___Northern_Leaf_Blight": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Corn_(maize)___Northern_Leaf_Blight"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Corn_(maize)___healthy": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Corn_(maize)___healthy"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Grape___Black_rot": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Grape___Black_rot"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Grape___Esca_(Black_Measles)": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Grape___Esca_(Black_Measles)"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Grape___Leaf_blight_(Isariopsis_Leaf_Spot)"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Grape___healthy": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Grape___healthy"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Orange___Haunglongbing_(Citrus_greening)": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Orange___Haunglongbing_(Citrus_greening)"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Peach___Bacterial_spot": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Peach___Bacterial_spot"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Peach___healthy": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Peach___healthy"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Pepper,_bell___Bacterial_spot": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Pepper,_bell___Bacterial_spot"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Pepper,_bell___healthy": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Pepper,_bell___healthy"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Potato___Early_blight": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Potato___Early_blight"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Potato___Late_blight": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Potato___Late_blight"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Potato___healthy": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Potato___healthy"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Raspberry___healthy": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Raspberry___healthy"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Soybean___healthy": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Soybean___healthy"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Squash___Powdery_mildew": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Squash___Powdery_mildew"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Strawberry___Leaf_scorch": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Strawberry___Leaf_scorch"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Strawberry___healthy": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Strawberry___healthy"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Tomato___Bacterial_spot": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Tomato___Bacterial_spot"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Tomato___Early_blight": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Tomato___Early_blight"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Tomato___Late_blight": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Tomato___Late_blight"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Tomato___Leaf_Mold": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Tomato___Leaf_Mold"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Tomato___Septoria_leaf_spot": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Tomato___Septoria_leaf_spot"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Tomato___Spider_mites Two-spotted_spider_mite": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Tomato___Spider_mites Two-spotted_spider_mite"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Tomato___Target_Spot": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Tomato___Target_Spot"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Tomato___Tomato_Yellow_Leaf_Curl_Virus": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Tomato___Tomato_Yellow_Leaf_Curl_Virus"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Tomato___Tomato_mosaic_virus": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Tomato___Tomato_mosaic_virus"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Tomato___healthy": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/plantvillage/Tomato___healthy"
+    ],
+    "source": "plantvillage",
+    "max_source": 380,
+    "max_train": 300
+  },
+  "Mango___Anthracnose": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/mangoleafbd/Anthracnose"
+    ],
+    "source": "mangoleafbd"
+  },
+  "Mango___Bacterial_Canker": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/mangoleafbd/Bacterial Canker"
+    ],
+    "source": "mangoleafbd"
+  },
+  "Mango___Cutting_Weevil": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/mangoleafbd/Cutting Weevil"
+    ],
+    "source": "mangoleafbd"
+  },
+  "Mango___Die_Back": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/mangoleafbd/Die Back"
+    ],
+    "source": "mangoleafbd"
+  },
+  "Mango___Gall_Midge": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/mangoleafbd/Gall Midge"
+    ],
+    "source": "mangoleafbd"
+  },
+  "Mango___healthy": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/mangoleafbd/Healthy"
+    ],
+    "source": "mangoleafbd"
+  },
+  "Mango___Powdery_Mildew": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/mangoleafbd/Powdery Mildew"
+    ],
+    "source": "mangoleafbd"
+  },
+  "Mango___Sooty_Mould": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/mangoleafbd/Sooty Mould"
+    ],
+    "source": "mangoleafbd"
+  },
+  "Rice___Brown_Spot": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/rice/BrownSpot"
+    ],
+    "source": "rice"
+  },
+  "Rice___Hispa": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/rice/Hispa"
+    ],
+    "source": "rice"
+  },
+  "Rice___Leaf_Blast": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/rice/LeafBlast"
+    ],
+    "source": "rice"
+  },
+  "Rice___healthy": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/rice/Healthy"
+    ],
+    "source": "rice"
+  },
+  "Wheat___Leaf_Rust": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/wheat/Leaf Rust"
+    ],
+    "source": "wheat"
+  },
+  "Wheat___healthy": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/wheat/Healthy Wheat"
+    ],
+    "source": "wheat",
+    "min_green": 0.5
+  },
+  "Tulsi___healthy": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/tulsi/Nagpur_Region_Basil_Plant_Healthy",
+      "${PLANTCARE_SOURCES}/tulsi/Amravati_Region_Basil_Plant_Healthy"
+    ],
+    "source": "tulsi"
+  },
+  "Tulsi___Unhealthy": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/tulsi/Basil_Plant_Unhealthy"
+    ],
+    "source": "tulsi"
+  },
+  "Other___unsupported_plant": {
+    "folders": [
+      "${PLANTCARE_SOURCES}/other"
+    ],
+    "recursive": true,
+    "source": "other",
+    "max_source": 700
+  }
+}

@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block title %}Scan Result · PlantCare AI{% endblock %}
+{% block page %}result{% endblock %}
+{% block content %}
+<section class="section result-page" data-scan-id="{{ scan_id }}">
+  <div class="container">
+
+    <div class="center-state" data-state-loading>
+      <span class="spinner dark"></span>
+      <p>Loading result…</p>
+    </div>
+
+    <div class="center-state" data-state-error hidden>
+      <div class="icon-badge lg warn"><svg class="icon"><use href="#i-alert"/></svg></div>
+      <h2>Result not available</h2>
+      <p data-error-text></p>
+      <div class="btn-row">
+        <a href="{{ url_for('scan') }}" class="btn btn-primary">Scan Another Leaf</a>
+        <a href="{{ url_for('history') }}" class="btn btn-ghost">View History</a>
+      </div>
+    </div>
+
+    <div data-result hidden>
+      <div class="result-top">
+        <div>
+          <span class="eyebrow" data-scan-date></span>
+          <h1 data-title>Scan result</h1>
+        </div>
+        <span class="status-pill" data-status-pill></span>
+      </div>
+
+      <div class="result-grid">
+        <!-- Left column: image + identification -->
+        <aside class="result-side">
+          <div class="card image-card">
+            <img alt="Uploaded leaf" data-image>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title"><svg class="icon"><use href="#i-leaf"/></svg> Plant identification</h3>
+            <dl class="facts">
+              <div data-local-row><dt>Local name</dt><dd data-local></dd></div>
+              <div><dt>Plant</dt><dd data-plant></dd></div>
+              <div data-sci-row><dt>Scientific name</dt><dd><em data-sci></em></dd></div>
+            </dl>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title"><svg class="icon"><use href="#i-cpu"/></svg> Disease detection</h3>
+            <dl class="facts">
+              <div><dt>Disease</dt><dd data-disease></dd></div>
+              <div><dt>Status</dt><dd data-status></dd></div>
+              <div data-pathogen-row><dt>Cause type</dt><dd data-pathogen></dd></div>
+            </dl>
+            <div class="confidence">
+              <div class="confidence-ring" data-ring>
+                <svg viewBox="0 0 120 120">
+                  <circle cx="60" cy="60" r="52" class="ring-bg"/>
+                  <circle cx="60" cy="60" r="52" class="ring-fg" data-ring-fg/>
+                </svg>
+                <div class="ring-label"><b data-confidence>0%</b><span>confidence</span></div>
+              </div>
+              <p class="muted small" data-confidence-note></p>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Right column: information -->
+        <div class="result-main">
+          <div class="card uncertain-card" data-uncertain hidden>
+            <div class="icon-badge lg warn"><svg class="icon"><use href="#i-alert"/></svg></div>
+            <div>
+              <h2>We couldn't identify this leaf confidently</h2>
+              <p data-uncertain-text></p>
+            </div>
+          </div>
+
+          <div class="card" data-section="description">
+            <h3 class="card-title"><svg class="icon"><use href="#i-info"/></svg> <span data-desc-title>About this disease</span></h3>
+            <p data-description></p>
+          </div>
+
+          <div class="info-grid">
+            <div class="card" data-section="symptoms">
+              <h3 class="card-title"><svg class="icon"><use href="#i-alert"/></svg> Common symptoms</h3>
+              <ul class="list" data-list="symptoms"></ul>
+            </div>
+            <div class="card" data-section="signs">
+              <h3 class="card-title"><svg class="icon"><use href="#i-image"/></svg> Visible signs of infection</h3>
+              <ul class="list" data-list="signs"></ul>
+            </div>
+          </div>
+
+          <div class="card" data-section="causes">
+            <h3 class="card-title"><svg class="icon"><use href="#i-bug"/></svg> Possible causes</h3>
+            <ul class="list" data-list="causes"></ul>
+          </div>
+
+          <div class="card card-accent" data-section="treatment">
+            <h3 class="card-title"><svg class="icon"><use href="#i-clipboard"/></svg> Recommended treatment</h3>
+            <ol class="list numbered" data-list="treatment"></ol>
+            <p class="muted small">Use any chemical product exactly as its label directs, and check with your local agricultural office for approved products in your area.</p>
+          </div>
+
+          <div class="card" data-section="prevention">
+            <h3 class="card-title"><svg class="icon"><use href="#i-shield"/></svg> <span data-prev-title>Prevention</span></h3>
+            <ul class="list checks" data-list="prevention"></ul>
+          </div>
+
+          <div class="card" data-section="top">
+            <h3 class="card-title"><svg class="icon"><use href="#i-cpu"/></svg> What the AI considered</h3>
+            <div class="bars" data-top></div>
+          </div>
+
+          <div class="btn-row">
+            <a href="{{ url_for('scan') }}" class="btn btn-primary btn-lg">
+              <svg class="icon"><use href="#i-camera"/></svg> Scan Another Leaf
+            </a>
+            <a href="{{ url_for('index') }}" class="btn btn-ghost btn-lg">
+              <svg class="icon"><use href="#i-home"/></svg> Back to Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Scan History · PlantCare AI{% endblock %}
+{% block page %}history{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div class="container">
+    <span class="eyebrow">Your scans</span>
+    <div class="head-row">
+      <h1>Scan history</h1>
+      <a href="{{ url_for('scan') }}" class="btn btn-primary">
+        <svg class="icon"><use href="#i-camera"/></svg> New scan
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section pt-0">
+  <div class="container">
+    <div class="center-state" data-state-loading>
+      <span class="spinner dark"></span>
+      <p>Loading history…</p>
+    </div>
+
+    <div class="alert alert-error" data-error hidden>
+      <svg class="icon"><use href="#i-alert"/></svg>
+      <div data-error-text></div>
+    </div>
+
+    <div class="center-state" data-state-empty hidden>
+      <div class="icon-badge lg"><svg class="icon"><use href="#i-history"/></svg></div>
+      <h2>No scans yet</h2>
+      <p>Your scanned leaves will appear here.</p>
+      <a href="{{ url_for('scan') }}" class="btn btn-primary">Scan Your Plant</a>
+    </div>
+
+    <div class="history-grid" data-history-list></div>
+  </div>
+</section>
+
+<!-- Delete confirmation -->
+<div class="modal" data-confirm hidden>
+  <div class="modal-box card">
+    <h3>Delete this scan?</h3>
+    <p class="muted">The result and its photo will be removed permanently.</p>
+    <div class="btn-row end">
+      <button type="button" class="btn btn-ghost" data-confirm-cancel>Cancel</button>
+      <button type="button" class="btn btn-danger" data-confirm-ok>
+        <svg class="icon"><use href="#i-trash"/></svg> Delete
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

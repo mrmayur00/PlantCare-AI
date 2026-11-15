@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% block title %}PlantCare AI · Detect Plant Diseases with AI{% endblock %}
+{% block page %}home{% endblock %}
+{% block content %}
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><svg class="icon"><use href="#i-cpu"/></svg> Deep-learning leaf analysis</span>
+      <h1>Detect Plant Diseases with AI</h1>
+      <p class="lead">
+        Take a photo of a leaf or upload one from your gallery. PlantCare AI's image
+        classifier, trained on thousands of labelled leaf photos, identifies the plant,
+        tells you whether it is healthy, and explains how to treat and prevent the disease.
+      </p>
+      <div class="hero-actions">
+        <a href="{{ url_for('scan') }}" class="btn btn-primary btn-lg">
+          <svg class="icon"><use href="#i-camera"/></svg> Scan Your Plant
+        </a>
+        <a href="#how" class="btn btn-ghost btn-lg">How it works</a>
+      </div>
+      <ul class="hero-stats">
+        <li><b>{{ n_plants or 18 }}</b><span>plant species</span></li>
+        <li><b>{{ n_conditions or 54 }}</b><span>leaf conditions</span></li>
+        <li><b>&lt;2s</b><span>per scan</span></li>
+      </ul>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <img src="{{ url_for('static', filename='images/hero-leaf.svg') }}" alt="" width="520" height="520">
+      <div class="hero-chip chip-a"><svg class="icon"><use href="#i-check"/></svg> Tomato · Healthy</div>
+      <div class="hero-chip chip-b"><span class="dot"></span> Early Blight · 94%</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Three simple steps</span>
+      <h2>How PlantCare AI works</h2>
+    </div>
+    <ol class="steps">
+      <li class="card step">
+        <span class="step-num">1</span>
+        <div class="icon-badge"><svg class="icon"><use href="#i-camera"/></svg></div>
+        <h3>Upload or capture</h3>
+        <p>Photograph a single leaf with your phone camera, or choose a JPG or PNG from your gallery.</p>
+      </li>
+      <li class="card step">
+        <span class="step-num">2</span>
+        <div class="icon-badge"><svg class="icon"><use href="#i-cpu"/></svg></div>
+        <h3>AI analyses the image</h3>
+        <p>A convolutional neural network (MobileNetV2) compares the leaf's patterns with {{ n_conditions or 54 }} known conditions.</p>
+      </li>
+      <li class="card step">
+        <span class="step-num">3</span>
+        <div class="icon-badge"><svg class="icon"><use href="#i-clipboard"/></svg></div>
+        <h3>Get your plant report</h3>
+        <p>See the disease, confidence score, symptoms, treatment and prevention tips in one place.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Features</span>
+      <h2>Everything you need to care for your crops</h2>
+    </div>
+    <div class="feature-grid">
+      <article class="card feature">
+        <div class="icon-badge"><svg class="icon"><use href="#i-leaf"/></svg></div>
+        <h3>Real AI classification</h3>
+        <p>Every result comes from the trained model analysing your actual photo. Nothing is pre-written.</p>
+      </article>
+      <article class="card feature">
+        <div class="icon-badge"><svg class="icon"><use href="#i-shield"/></svg></div>
+        <h3>Honest confidence</h3>
+        <p>If the AI is unsure, it says so instead of guessing a disease name.</p>
+      </article>
+      <article class="card feature">
+        <div class="icon-badge"><svg class="icon"><use href="#i-drop"/></svg></div>
+        <h3>Treatment &amp; prevention</h3>
+        <p>Practical steps for treatment, watering, soil care and stopping the disease from returning.</p>
+      </article>
+      <article class="card feature">
+        <div class="icon-badge"><svg class="icon"><use href="#i-history"/></svg></div>
+        <h3>Scan history</h3>
+        <p>Every scan is saved so you can revisit results and track your plants over time.</p>
+      </article>
+      <article class="card feature">
+        <div class="icon-badge"><svg class="icon"><use href="#i-phone"/></svg></div>
+        <h3>Works on your phone</h3>
+        <p>Mobile-first design with direct camera capture on Android and iPhone browsers.</p>
+      </article>
+      <article class="card feature">
+        <div class="icon-badge"><svg class="icon"><use href="#i-bug"/></svg></div>
+        <h3>Fungi, bacteria, viruses, pests</h3>
+        <p>Covers blights, rusts, mildews, leaf spots, mosaic viruses and spider mites.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container about-split">
+    <div>
+      <span class="eyebrow">About the application</span>
+      <h2>Early detection saves harvests</h2>
+      <p>
+        Plant diseases are a major cause of crop loss, and they are easiest to control when
+        spotted early. PlantCare AI puts a leaf-disease classifier in your pocket: it recognises
+        Tulsi, mango (amba), rice (dhan) and wheat (gahu), as well as apple, blueberry, cherry, corn,
+        grape, orange, peach, bell pepper, potato, raspberry, soybean, squash, strawberry and tomato leaves.
+      </p>
+      <p class="muted">
+        Built with Flask, TensorFlow/Keras and SQLite as a student project. The AI is a guide,
+        not a replacement for an agricultural expert.
+      </p>
+      <a href="{{ url_for('about') }}" class="btn btn-ghost">Learn more <svg class="icon"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="card cta-card">
+      <h3>Ready to check a leaf?</h3>
+      <p>It takes less than a minute.</p>
+      <a href="{{ url_for('scan') }}" class="btn btn-light btn-lg">
+        <svg class="icon"><use href="#i-camera"/></svg> Scan Your Plant
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

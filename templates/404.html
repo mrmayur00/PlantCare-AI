@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Page not found · PlantCare AI{% endblock %}
+{% block content %}
+<section class="section">
+  <div class="container center-state">
+    <div class="icon-badge lg"><svg class="icon"><use href="#i-leaf"/></svg></div>
+    <h1>Page not found</h1>
+    <p>The page you were looking for doesn't exist.</p>
+    <a href="{{ url_for('index') }}" class="btn btn-primary">Back to Home</a>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,452 @@
+{
+  "sources": {
+    "plantvillage": "PlantVillage (Hughes & Salathe 2015), github.com/spMohanty/PlantVillage-Dataset, CC BY-SA 3.0",
+    "mangoleafbd": "MangoLeafBD (Ahmed et al. 2023, Data in Brief), Mendeley 10.17632/hxsnvwty3r.1, CC BY 4.0; copy from github.com/DevyanshMalhotra/MangoLeafDiseaseDetection",
+    "rice": "Rice Diseases Image Dataset (Huy Minh Do, Kaggle), field photos; copy from github.com/jonathanrjpereira/Rice-Disease-Classification (Rice_All.zip)",
+    "wheat": "Wheat Disease Detection images (web-collected), github.com/suhasmaddali/Wheat-Disease-Detection-; only Healthy + Leaf Rust used, Healthy filtered to green-plant photos",
+    "tulsi": "India's Most Famous Basil (Tulsi) Plant Leaves Quality Dataset, Nagpur/Amravati, Maharashtra; copy from github.com/yassa-life/Basil_Leaf_health_check_dataset-_trained_model-evidence",
+    "other": "Healthy and diseased leaves of sweet basil, mint, coriander, parsley, kale, lettuce; github.com/waqas-ali/tf_plant_disease_classification - used only as the 'unsupported plant' class"
+  },
+  "classes": {
+    "Apple___Apple_scab": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 376,
+      "train": 300,
+      "test": 57
+    },
+    "Apple___Black_rot": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 376,
+      "train": 300,
+      "test": 57
+    },
+    "Apple___Cedar_apple_rust": {
+      "source": "plantvillage",
+      "read": 274,
+      "unreadable": 0,
+      "unique_after_dedup": 266,
+      "train": 229,
+      "test": 41
+    },
+    "Apple___healthy": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 374,
+      "train": 300,
+      "test": 57
+    },
+    "Blueberry___healthy": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 366,
+      "train": 300,
+      "test": 57
+    },
+    "Cherry_(including_sour)___Powdery_mildew": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 369,
+      "train": 300,
+      "test": 57
+    },
+    "Cherry_(including_sour)___healthy": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 344,
+      "train": 300,
+      "test": 57
+    },
+    "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 369,
+      "train": 300,
+      "test": 57
+    },
+    "Corn_(maize)___Common_rust_": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 235,
+      "train": 300,
+      "test": 57
+    },
+    "Corn_(maize)___Northern_Leaf_Blight": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 377,
+      "train": 300,
+      "test": 57
+    },
+    "Corn_(maize)___healthy": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 378,
+      "train": 300,
+      "test": 57
+    },
+    "Grape___Black_rot": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 366,
+      "train": 300,
+      "test": 57
+    },
+    "Grape___Esca_(Black_Measles)": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 369,
+      "train": 300,
+      "test": 57
+    },
+    "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 373,
+      "train": 300,
+      "test": 57
+    },
+    "Grape___healthy": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 361,
+      "train": 300,
+      "test": 57
+    },
+    "Mango___Anthracnose": {
+      "source": "mangoleafbd",
+      "read": 500,
+      "unreadable": 0,
+      "unique_after_dedup": 424,
+      "train": 395,
+      "test": 75
+    },
+    "Mango___Bacterial_Canker": {
+      "source": "mangoleafbd",
+      "read": 500,
+      "unreadable": 0,
+      "unique_after_dedup": 191,
+      "train": 400,
+      "test": 75
+    },
+    "Mango___Cutting_Weevil": {
+      "source": "mangoleafbd",
+      "read": 500,
+      "unreadable": 0,
+      "unique_after_dedup": 239,
+      "train": 173,
+      "test": 75
+    },
+    "Mango___Die_Back": {
+      "source": "mangoleafbd",
+      "read": 500,
+      "unreadable": 0,
+      "unique_after_dedup": 293,
+      "train": 398,
+      "test": 75
+    },
+    "Mango___Gall_Midge": {
+      "source": "mangoleafbd",
+      "read": 500,
+      "unreadable": 0,
+      "unique_after_dedup": 218,
+      "train": 397,
+      "test": 75
+    },
+    "Mango___Powdery_Mildew": {
+      "source": "mangoleafbd",
+      "read": 500,
+      "unreadable": 0,
+      "unique_after_dedup": 288,
+      "train": 400,
+      "test": 75
+    },
+    "Mango___Sooty_Mould": {
+      "source": "mangoleafbd",
+      "read": 500,
+      "unreadable": 0,
+      "unique_after_dedup": 332,
+      "train": 391,
+      "test": 75
+    },
+    "Mango___healthy": {
+      "source": "mangoleafbd",
+      "read": 500,
+      "unreadable": 0,
+      "unique_after_dedup": 335,
+      "train": 354,
+      "test": 75
+    },
+    "Orange___Haunglongbing_(Citrus_greening)": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 370,
+      "train": 300,
+      "test": 57
+    },
+    "Other___unsupported_plant": {
+      "source": "other",
+      "read": 700,
+      "unreadable": 0,
+      "unique_after_dedup": 675,
+      "train": 400,
+      "test": 105
+    },
+    "Peach___Bacterial_spot": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 371,
+      "train": 300,
+      "test": 57
+    },
+    "Peach___healthy": {
+      "source": "plantvillage",
+      "read": 359,
+      "unreadable": 0,
+      "unique_after_dedup": 300,
+      "train": 299,
+      "test": 54
+    },
+    "Pepper,_bell___Bacterial_spot": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 377,
+      "train": 300,
+      "test": 57
+    },
+    "Pepper,_bell___healthy": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 375,
+      "train": 300,
+      "test": 57
+    },
+    "Potato___Early_blight": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 380,
+      "train": 300,
+      "test": 57
+    },
+    "Potato___Late_blight": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 378,
+      "train": 300,
+      "test": 57
+    },
+    "Potato___healthy": {
+      "source": "plantvillage",
+      "read": 151,
+      "unreadable": 0,
+      "unique_after_dedup": 150,
+      "train": 125,
+      "test": 25
+    },
+    "Raspberry___healthy": {
+      "source": "plantvillage",
+      "read": 370,
+      "unreadable": 0,
+      "unique_after_dedup": 322,
+      "train": 300,
+      "test": 56
+    },
+    "Rice___Brown_Spot": {
+      "source": "rice",
+      "read": 523,
+      "unreadable": 0,
+      "unique_after_dedup": 235,
+      "train": 400,
+      "test": 78
+    },
+    "Rice___Hispa": {
+      "source": "rice",
+      "read": 523,
+      "unreadable": 0,
+      "unique_after_dedup": 234,
+      "train": 394,
+      "test": 78
+    },
+    "Rice___Leaf_Blast": {
+      "source": "rice",
+      "read": 523,
+      "unreadable": 0,
+      "unique_after_dedup": 251,
+      "train": 400,
+      "test": 78
+    },
+    "Rice___healthy": {
+      "source": "rice",
+      "read": 523,
+      "unreadable": 0,
+      "unique_after_dedup": 276,
+      "train": 400,
+      "test": 78
+    },
+    "Soybean___healthy": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 372,
+      "train": 300,
+      "test": 57
+    },
+    "Squash___Powdery_mildew": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 377,
+      "train": 300,
+      "test": 57
+    },
+    "Strawberry___Leaf_scorch": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 375,
+      "train": 300,
+      "test": 57
+    },
+    "Strawberry___healthy": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 377,
+      "train": 300,
+      "test": 57
+    },
+    "Tomato___Bacterial_spot": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 321,
+      "train": 300,
+      "test": 57
+    },
+    "Tomato___Early_blight": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 376,
+      "train": 300,
+      "test": 57
+    },
+    "Tomato___Late_blight": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 375,
+      "train": 300,
+      "test": 57
+    },
+    "Tomato___Leaf_Mold": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 373,
+      "train": 300,
+      "test": 57
+    },
+    "Tomato___Septoria_leaf_spot": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 380,
+      "train": 300,
+      "test": 57
+    },
+    "Tomato___Spider_mites Two-spotted_spider_mite": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 371,
+      "train": 300,
+      "test": 57
+    },
+    "Tomato___Target_Spot": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 378,
+      "train": 300,
+      "test": 57
+    },
+    "Tomato___Tomato_Yellow_Leaf_Curl_Virus": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 368,
+      "train": 300,
+      "test": 57
+    },
+    "Tomato___Tomato_mosaic_virus": {
+      "source": "plantvillage",
+      "read": 372,
+      "unreadable": 0,
+      "unique_after_dedup": 350,
+      "train": 300,
+      "test": 56
+    },
+    "Tomato___healthy": {
+      "source": "plantvillage",
+      "read": 380,
+      "unreadable": 0,
+      "unique_after_dedup": 373,
+      "train": 300,
+      "test": 57
+    },
+    "Tulsi___Unhealthy": {
+      "source": "tulsi",
+      "read": 439,
+      "unreadable": 0,
+      "unique_after_dedup": 210,
+      "train": 226,
+      "test": 66
+    },
+    "Tulsi___healthy": {
+      "source": "tulsi",
+      "read": 459,
+      "unreadable": 0,
+      "unique_after_dedup": 334,
+      "train": 354,
+      "test": 69
+    },
+    "Wheat___Leaf_Rust": {
+      "source": "wheat",
+      "read": 1618,
+      "unreadable": 0,
+      "unique_after_dedup": 635,
+      "train": 400,
+      "test": 243
+    },
+    "Wheat___healthy": {
+      "source": "wheat",
+      "read": 412,
+      "unreadable": 0,
+      "unique_after_dedup": 167,
+      "train": 109,
+      "test": 62
+    }
+  }
+}
